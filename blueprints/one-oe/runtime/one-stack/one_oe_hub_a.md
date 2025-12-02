@@ -6,7 +6,7 @@
 
 &nbsp; 
 
- ### Deployment Diagram
+ ### Deployment diagram
  
 <img src="one_oe_a.png" width="900" height="value">
 
@@ -16,10 +16,10 @@
 
 | JSON configuration | Configuration-defined components | Terraform module | 
 |:-|:-|:-|
-| [**IAM Configuration**](oci_open_lz_one-oe_iam.auto.tfvars.json) | Compartments, Identity Domain, IAM groups, policies | [OCI Landing Zone IAM](https://github.com/oci-landing-zones/terraform-oci-modules-iam) |
-| [**Network Configuration**](oci_open_lz_hub_a_network_light.auto.tfvars.json) | Hub A, two OCI Network Firewalls (DMZ, Internal), Internet GW, NAT GW, Service GW, DRG, Routing tables, two Spoke VCNs (Prod, PreProd), Security Lists, NSGs| [OCI Landing Zone Network](https://github.com/oci-landing-zones/terraform-oci-modules-networking) |
-| [**Security Configuration**](oci_open_lz_one-oe_security_cisl1.auto.tfvars.json) | Security Zones, Cloud Guard | [OCI Landing Zone Security](https://github.com/oci-landing-zones/terraform-oci-modules-security) |
-| [**Observability Configuration**](oci_open_lz_one-oe_observability_cisl1.auto.tfvars.json) | Events, Alarms, Logging, and Notifications | [OCI Landing Zone Observability](https://github.com/oci-landing-zones/terraform-oci-modules-observability) |
+| [**IAM Configuration**</br> • oneoe_iam.json](oci_open_lz_one-oe_iam.auto.tfvars.json) | Compartments, Identity Domain, IAM groups, policies | [OCI Landing Zone IAM](https://github.com/oci-landing-zones/terraform-oci-modules-iam) |
+| [**Network Configuration**</br> oneoe_hub_a_network_pre.json](oci_open_lz_hub_a_network_light.auto.tfvars.json) | Hub A, two OCI Network Firewalls (DMZ, Internal), Internet GW, NAT GW, Service GW, DRG, Routing tables, two Spoke VCNs (Prod, PreProd), Security Lists, NSGs| [OCI Landing Zone Network](https://github.com/oci-landing-zones/terraform-oci-modules-networking) |
+| [**Security Configuration:**</br> oneoe_security_cis1.json</br> oneoe_security_cis2.json](oci_open_lz_one-oe_security_cisl1.auto.tfvars.json) | Security Zones, Cloud Guard | [OCI Landing Zone Security](https://github.com/oci-landing-zones/terraform-oci-modules-security) |
+| [**Observability Configuration**</br> one_oe_observability_cisl1.json</br> one_oe_observability_cisl2.json](oci_open_lz_one-oe_observability_cisl1.auto.tfvars.json) | Events, Alarms, Logging, and Notifications | [OCI Landing Zone Observability](https://github.com/oci-landing-zones/terraform-oci-modules-observability) |
 
 &nbsp; 
 
