@@ -8,7 +8,7 @@
 
  ### Deployment Diagram
  
-<img src="one_oe_a.png" width="300" height="">
+<img src="one_oe_a.png" width="900" height="value">
 
 &nbsp; 
 
