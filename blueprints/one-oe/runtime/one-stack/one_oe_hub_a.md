@@ -4,8 +4,13 @@
  ### Overview
  This document provides a detailed overview of the One-OE Landing Zone with Hub A addon, including its components and deployment guidance.
 
+&nbsp; 
+
  ### Deployment Diagram
  
+<img src="one_oe_a.png" width="300" height="">
+
+&nbsp; 
 
  ### Input Configurations
 
@@ -16,6 +21,7 @@
 | [**Security Configuration**](oci_open_lz_one-oe_security_cisl1.auto.tfvars.json) | Security Zones, Cloud Guard | [OCI Landing Zone Security](https://github.com/oci-landing-zones/terraform-oci-modules-security) |
 | [**Observability Configuration**](oci_open_lz_one-oe_observability_cisl1.auto.tfvars.json) | Events, Alarms, Logging, and Notifications | [OCI Landing Zone Observability](https://github.com/oci-landing-zones/terraform-oci-modules-observability) |
 
+&nbsp; 
 
 
  
