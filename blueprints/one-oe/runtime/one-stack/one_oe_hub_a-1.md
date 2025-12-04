@@ -54,14 +54,14 @@ And follow these steps:
   - Below steps or some of them to be executed once Step 1 Stack and all landing zone elements are created. This step requires the update the previous ORM stack json configuration files in order to complete the Networking routing, add extra Security Zones Recipes (3, 4, and 5), and Network Flow Logs. This update can be executed in one step by replacing both files as described below.</br>
   
 
-  1. Network routing:</br>
+  1. **Network routing**:</br>
      - Use a configuration [oneoe_hub_a_network.json](oneoe_hub_a_network.json) and update "DMZ OCI NFW PRIVATE IP OCID" and "Internal OCI NFW PRIVATE IP OCID" with the OCID of the DMZ and Internal FW's Private IP OCID accordingly.
      - Edit the ORM stack and replace the oneoe_hub_a_network_pre.json network JSON configuration file with the oneoe_hub_a_network.json, which now contains Private IP of both OCI Network Firewalls, in the respective routing tables.
   
-  2. Security Zones:</br>
+  2. **Security Zones**:</br>
     Use the configuration [oneoe_security_cis1_sz345.json](oci_open_lz_one-oe_security_cisl1_addon_sz345.auto.tfvars.json) to extend the base configuration with additional Security Zone targets to apply Recipes in the shared network compartment, the production shared network compartment, and project 1 example. As the compartment hierarchy goes deeper the Security Zones are more restrictive.</br>
     Note that this update action is not in the base stack red due to limitations with terraform dependency grapth while creating these resources. These will be merged once these limitations are solved.
-  3. Observability - Flow Logs:
+  3. **Observability - Flow Logs**:</br>
     Use the configuration [oneoe_observability_cisl1_flowlogs.json](oci_open_lz_one-oe_observability_cisl2_addon_flowlogs.auto.tfvars.json) to create the VCN and Subnets flow logs.</br>
     Note that by default, the VCN and Subnet flows logs are not deployed. The first 10 gigabytes of log storage are free every month. The configuration creates a log group for the shared network and each shared network environment, where it would create logs for every VCN and subnet within the VCNs. It would depend on how much traffic is generated in your VCNs/Subnets to overpass the free log storage that you get every month.
 
