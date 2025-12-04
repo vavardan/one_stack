@@ -24,12 +24,14 @@ There are two deployment options: One-Stack Deployment with **CIS Level 1** and 
 
 &nbsp; 
 
+---
+
  ### Input Configurations for **CIS Level 1** 
 
 | JSON configuration | Configuration-defined components | Terraform module that processes configuration | 
 |:-|:-|:-|
 | **IAM configuration**</br> [oneoe_iam.json](oci_open_lz_one-oe_iam.auto.tfvars.json) | • Compartments</br> • Identity Domain</br> • IAM groups and policies | [OCI Landing Zone IAM](https://github.com/oci-landing-zones/terraform-oci-modules-iam) |
-| **Network configuration** in</br> *Step 1*: [oneoe_hub_a_network_pre.json](oci_open_lz_hub_a_network_light.auto.tfvars.json)</br> and</br> *Step 2*: [oneoe_hub_a_network.json](oneoe_hub_a_network.json) | • Hub A</br> • Two OCI Network Firewalls (DMZ and Internal) </br> • Internet, NAT and Service Gateways</br> • Dynamic Routing Gateway (DRG)</br> • Routing tables</br> • Two Spoke VCNs (Prod and  PreProd)</br> • Security Lists and NSGs</br> • One example Public Load Balancer (LBaaS) | [OCI Landing Zone Network](https://github.com/oci-landing-zones/terraform-oci-modules-networking) |
+| **Network configuration** in</br> *Step 1*: [oneoe_hub_a_network_pre.json](oci_open_lz_hub_a_network_light.auto.tfvars.json)</br> and</br> *Step 2*: [oneoe_hub_a_network.json](oneoe_hub_a_network.json) | • Hub A</br> • OCI Network Firewalls (DMZ & Internal) </br> • Internet, NAT, and Service Gateways</br> • Dynamic Routing Gateway (DRG)</br> • Routing Tables</br> • Two Spoke VCNs (Prod & PreProd)</br> • Security Lists (SLs) & Network Security Groups (NSGs)</br> • Public Load Balancer ([free tier LBaaS](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm#loadbalancing)) - for example purposes | [OCI Landing Zone Network](https://github.com/oci-landing-zones/terraform-oci-modules-networking) |
 | **Security configuration** in</br> *Step 1*: [oneoe_security_cis1.json](oci_open_lz_one-oe_security_cisl1.auto.tfvars.json)</br> and</br> *Step 2*: [oneoe_security_cis1_sz345.json](oci_open_lz_one-oe_security_cisl1.auto.tfvars.json) | • Security Zones and Cloud Guard | [OCI Landing Zone Security](https://github.com/oci-landing-zones/terraform-oci-modules-security) |
 | **Observability configuration** in</br> *Step 1*: [oneoe_observability_cisl1.json](oci_open_lz_one-oe_observability_cisl1.auto.tfvars.json)</br> and</br> *Step 2*: [oneoe_observability_cisl1_fllowlogs.json](oci_open_lz_one-oe_observability_cisl2_addon_flowlogs.auto.tfvars.json) | • Events</br> • Alarms</br> • Logging</br> • Notifications | [OCI Landing Zone Observability](https://github.com/oci-landing-zones/terraform-oci-modules-observability) |
 
@@ -63,6 +65,7 @@ And follow these steps:
     Use the configuration [one_oe_observability_cisl1_flowlogs.json](oci_open_lz_one-oe_observability_cisl2_addon_flowlogs.auto.tfvars.json) to create the VCN and Subnets flow logs.</br>
     Note that by default, the VCN and Subnet flows logs are not deployed. The first 10 gigabytes of log storage are free every month. The configuration creates a log group for the shared network and each shared network environment, where it would create logs for every VCN and subnet within the VCNs. It would depend on how much traffic is generated in your VCNs/Subnets to overpass the free log storage that you get every month.
 
+---
 
 
 &nbsp; 
