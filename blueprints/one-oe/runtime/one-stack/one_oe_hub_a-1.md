@@ -26,7 +26,7 @@ There are two deployment options: One-Stack Deployment with **CIS Level 1** and 
 
  ### Input Configurations for **CIS Level 1** 
 
-| JSON configuration | Configuration-defined components | as an input to Terraform module | 
+| JSON configuration | Configuration-defined components | Terraform module that processes configuration | 
 |:-|:-|:-|
 | **IAM configuration**</br> [oneoe_iam.json](oci_open_lz_one-oe_iam.auto.tfvars.json) | • Compartments</br> • Identity Domain</br> • IAM groups and policies | [OCI Landing Zone IAM](https://github.com/oci-landing-zones/terraform-oci-modules-iam) |
 | **Network configuration** in</br> *Step 1*: [oneoe_hub_a_network_pre.json](oci_open_lz_hub_a_network_light.auto.tfvars.json)</br> and</br> *Step 2*: [oneoe_hub_a_network.json](oneoe_hub_a_network.json) | • Hub A</br> • Two OCI Network Firewalls (DMZ and Internal) </br> • Internet, NAT and Service Gateways</br> • Dynamic Routing Gateway (DRG)</br> • Routing tables</br> • Two Spoke VCNs (Prod and  PreProd)</br> • Security Lists and NSGs</br> • One example Public Load Balancer (LBaaS) | [OCI Landing Zone Network](https://github.com/oci-landing-zones/terraform-oci-modules-networking) |
