@@ -26,12 +26,12 @@ There are two deployment options: One-Stack Deployment with **CIS Level 1** and 
 
  ### Input Configurations for **CIS Level 1** 
 
-| JSON configuration and file names | Configuration-defined components | as an input to Terraform module | 
+| JSON configuration and file names&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Configuration-defined components | as an input to Terraform module | 
 |:-|:-|:-|
 | **IAM Configuration**:</br> [oneoe_iam.json](oci_open_lz_one-oe_iam.auto.tfvars.json) | • Compartments</br> • Identity Domain</br> • IAM groups and policies | [OCI Landing Zone IAM](https://github.com/oci-landing-zones/terraform-oci-modules-iam) |
 | **Network Configuration**:</br> Step 1 - [oneoe_hub_a_network_pre.json](oci_open_lz_hub_a_network_light.auto.tfvars.json)</br> Step 2 - [oneoe_hub_a_network.json](oneoe_hub_a_network.json) | • Hub A</br> • Two OCI Network Firewalls (DMZ and Internal) </br> • Internet, NAT and Service Gateways</br> • Dynamic Routing Gateway (DRG)</br> • Routing tables</br> • Two Spoke VCNs (Prod and  PreProd)</br> • Security Lists and NSGs</br> • One example Public Load Balancer (LBaaS) | [OCI Landing Zone Network](https://github.com/oci-landing-zones/terraform-oci-modules-networking) |
 | **Security Configuration**:</br> Step 1 - [oneoe_security_cis1.json](oci_open_lz_one-oe_security_cisl1.auto.tfvars.json)</br> Step 2 - [oneoe_security_cis1.json](oci_open_lz_one-oe_security_cisl1.auto.tfvars.json) | • Security Zones and Cloud Guard | [OCI Landing Zone Security](https://github.com/oci-landing-zones/terraform-oci-modules-security) |
-| **Observability Configuration**</br> Step 1 - [one_oe_observability_cisl1.json](oci_open_lz_one-oe_observability_cisl1.auto.tfvars.json)</br> <span>Step2 - <a href="oci_open_lz_one-oe_observability_cisl2_addon_flowlogs.auto.tfvars.json">one_oe_observability_cisl1_flowlogs.json</a></span> | • Events</br> • Alarms</br> • Logging</br> • Notifications | [OCI Landing Zone Observability](https://github.com/oci-landing-zones/terraform-oci-modules-observability) |
+| **Observability Configuration**</br> Step 1 - [one_oe_observability_cisl1.json](oci_open_lz_one-oe_observability_cisl1.auto.tfvars.json)</br> Step2 - [one_oe_observability_cisl1_flowlogs.json](oci_open_lz_one-oe_observability_cisl2_addon_flowlogs.auto.tfvars.json) | • Events</br> • Alarms</br> • Logging</br> • Notifications | [OCI Landing Zone Observability](https://github.com/oci-landing-zones/terraform-oci-modules-observability) |
 
 &nbsp;
 
