@@ -24,14 +24,23 @@ There are two deployment options: One-Stack Deployment with **CIS Level 1** and 
 
 &nbsp; 
 
- ### Input Configurations for **CIS Level 1** 
+ ### Input Configurations for **Step 1** with **CIS Level 1** 
 
 | JSON configuration and file names | Configuration-defined components | Terraform module | 
 |:-|:-|:-|
-| [**IAM Configuration**:</br> oneoe_iam.json](oci_open_lz_one-oe_iam.auto.tfvars.json) | • Compartments</br> • Identity Domain</br> • IAM groups and policies | [OCI Landing Zone IAM](https://github.com/oci-landing-zones/terraform-oci-modules-iam) |
-| [**Network Configuration**:</br> oneoe_hub_a_network_pre.json](oci_open_lz_hub_a_network_light.auto.tfvars.json) | • Hub A</br> • Two OCI Network Firewalls (DMZ and Internal) </br> • Internet, NAT and Service Gateways</br> • Dynamic Routing Gateway (DRG)</br> • Routing tables</br> • Two Spoke VCNs (Prod and  PreProd)</br> • Security Lists and NSGs</br> • One example Public Load Balancer (LBaaS) | [OCI Landing Zone Network](https://github.com/oci-landing-zones/terraform-oci-modules-networking) |
+| **IAM Configuration**:</br> [oneoe_iam.json](oci_open_lz_one-oe_iam.auto.tfvars.json) | • Compartments</br> • Identity Domain</br> • IAM groups and policies | [OCI Landing Zone IAM](https://github.com/oci-landing-zones/terraform-oci-modules-iam) |
+| **Network Configuration**:</br> [oneoe_hub_a_network_pre.json](oci_open_lz_hub_a_network_light.auto.tfvars.json) | • Hub A</br> • Two OCI Network Firewalls (DMZ and Internal) </br> • Internet, NAT and Service Gateways</br> • Dynamic Routing Gateway (DRG)</br> • Routing tables</br> • Two Spoke VCNs (Prod and  PreProd)</br> • Security Lists and NSGs</br> • One example Public Load Balancer (LBaaS) | [OCI Landing Zone Network](https://github.com/oci-landing-zones/terraform-oci-modules-networking) |
 | [**Security Configuration**:</br> oneoe_security_cis1.json](oci_open_lz_one-oe_security_cisl1.auto.tfvars.json) | • Security Zones and Cloud Guard | [OCI Landing Zone Security](https://github.com/oci-landing-zones/terraform-oci-modules-security) |
 | [**Observability Configuration**</br> one_oe_observability_cisl1.json](oci_open_lz_one-oe_observability_cisl1.auto.tfvars.json) | • Events</br> • Alarms</br> • Logging</br> • Notifications | [OCI Landing Zone Observability](https://github.com/oci-landing-zones/terraform-oci-modules-observability) |
+
+&nbsp;
+
+| Name and Terraform module | JSON configuration - Step 1 | JSON configuration - Step 2 | Configuration-defined components | 
+|:-|:-|:-|:-|
+| **IAM configuration** input to [OCI Landing Zone IAM](https://github.com/oci-landing-zones/terraform-oci-modules-iam) |</br> [oneoe_iam.json](oci_open_lz_one-oe_iam.auto.tfvars.json) | | • Compartments</br> • Identity Domain</br> • IAM groups and policies |
+| **Network configuration** input to [OCI Landing Zone Network](https://github.com/oci-landing-zones/terraform-oci-modules-networking) | [oneoe_hub_a_network_pre.json](oci_open_lz_hub_a_network_light.auto.tfvars.json) | [oneoe_hub_a_network.json](oneoe_hub_a_network.json) | • Hub A</br> • Two OCI Network Firewalls (DMZ and Internal) </br> • Internet, NAT and Service Gateways</br> • Dynamic Routing Gateway (DRG)</br> • Routing tables</br> • Two Spoke VCNs (Prod and  PreProd)</br> • Security Lists and NSGs</br> • One example Public Load Balancer (LBaaS) |
+| **Security configuration** input to [OCI Landing Zone Security](https://github.com/oci-landing-zones/terraform-oci-modules-security) | [oneoe_security_cis1.json](oci_open_lz_one-oe_security_cisl1.auto.tfvars.json) | [oneoe_security_cis1_sz345.json](oci_open_lz_one-oe_security_cisl1_addon_sz345.auto.tfvars.json) | • Security Zones and Cloud Guard |
+| **Observability configuration** input to [OCI Landing Zone Observability](https://github.com/oci-landing-zones/terraform-oci-modules-observability) |[one_oe_observability_cisl1.json](oci_open_lz_one-oe_observability_cisl1.auto.tfvars.json) | [one_oe_observability_cisl1_flowlogs.json](oci_open_lz_one-oe_observability_cisl2_addon_flowlogs.auto.tfvars.json) | • Events</br> • Alarms</br> • Logging</br> • Notifications |
 
 &nbsp;
 
