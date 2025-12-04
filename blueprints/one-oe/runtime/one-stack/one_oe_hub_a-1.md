@@ -29,7 +29,7 @@ There are two deployment options: One-Stack Deployment with **CIS Level 1** and 
 | JSON configuration and file names | Configuration-defined components | Terraform module | 
 |:-|:-|:-|
 | [**IAM Configuration**: oneoe_iam.json](oci_open_lz_one-oe_iam.auto.tfvars.json) | Compartments, Identity Domain, IAM groups, policies | [OCI Landing Zone IAM](https://github.com/oci-landing-zones/terraform-oci-modules-iam) |
-| [**Network Configuration**: oneoe_hub_a_network_pre.json](oci_open_lz_hub_a_network_light.auto.tfvars.json) | Hub A, two OCI Network Firewalls (DMZ, Internal), Internet GW, NAT GW, Service GW, DRG, Routing tables, two Spoke VCNs (Prod, PreProd), Security Lists, NSGs| [OCI Landing Zone Network](https://github.com/oci-landing-zones/terraform-oci-modules-networking) |
+| [**Network Configuration**: oneoe_hub_a_network_pre.json](oci_open_lz_hub_a_network_light.auto.tfvars.json) | Hub A, two OCI Network Firewalls (DMZ and Internal NFWs), Internet GW, NAT GW, Service GW, DRG, Routing tables, two Spoke VCNs (Prod, PreProd), Security Lists, NSGs and one example Public Load Balancer (LBaaS) | [OCI Landing Zone Network](https://github.com/oci-landing-zones/terraform-oci-modules-networking) |
 | [**Security Configuration:** oneoe_security_cis1.json](oci_open_lz_one-oe_security_cisl1.auto.tfvars.json) | Security Zones, Cloud Guard | [OCI Landing Zone Security](https://github.com/oci-landing-zones/terraform-oci-modules-security) |
 | [**Observability Configuration:** one_oe_observability_cisl1.json](oci_open_lz_one-oe_observability_cisl1.auto.tfvars.json) | Events, Alarms, Logging, and Notifications | [OCI Landing Zone Observability](https://github.com/oci-landing-zones/terraform-oci-modules-observability) |
 
@@ -49,7 +49,7 @@ And follow these steps:
   6. Un-check run apply. Click Create.
   
 #### Step 2: 
-  - This step to be executed once Step 1 Stack and all landing zone elements are created. This step requires the update the previous ORM stack json configuration files in order to complete the Networking routing, add extra Security Zones Recipes (3, 4, and 5), and Network Flow Logs. This update can be executed in one step by replacing both files as described below.</br>
+  - Below steps or some of them to be executed once Step 1 Stack and all landing zone elements are created. This step requires the update the previous ORM stack json configuration files in order to complete the Networking routing, add extra Security Zones Recipes (3, 4, and 5), and Network Flow Logs. This update can be executed in one step by replacing both files as described below.</br>
   
 
   1. Network routing:</br>
