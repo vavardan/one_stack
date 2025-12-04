@@ -12,7 +12,7 @@
 
 &nbsp; 
 
-There are two deployment options: One-Stack Deployment with **CIS Level 1** and **CIS Level 2** Security Controls:
+There are two deployment options: One-Stack Deployment with **CIS Level 1** and **CIS Level 2** security controls:
 
 - **CIS Level 1** is recommended in scenarios where:
   - CIS Level 1 Security Controls meet your security requirements.
@@ -28,10 +28,10 @@ There are two deployment options: One-Stack Deployment with **CIS Level 1** and 
 
 | JSON configuration and file names | Configuration-defined components | Terraform module | 
 |:-|:-|:-|
-| [**IAM Configuration**: oneoe_iam.json](oci_open_lz_one-oe_iam.auto.tfvars.json) | Compartments, Identity Domain, IAM groups, policies | [OCI Landing Zone IAM](https://github.com/oci-landing-zones/terraform-oci-modules-iam) |
-| [**Network Configuration**: oneoe_hub_a_network_pre.json](oci_open_lz_hub_a_network_light.auto.tfvars.json) | Hub A, two OCI Network Firewalls (DMZ and Internal NFWs), Internet GW, NAT GW, Service GW, DRG, Routing tables, two Spoke VCNs (Prod, PreProd), Security Lists, NSGs and one example Public Load Balancer (LBaaS) | [OCI Landing Zone Network](https://github.com/oci-landing-zones/terraform-oci-modules-networking) |
-| [**Security Configuration:** oneoe_security_cis1.json](oci_open_lz_one-oe_security_cisl1.auto.tfvars.json) | Security Zones, Cloud Guard | [OCI Landing Zone Security](https://github.com/oci-landing-zones/terraform-oci-modules-security) |
-| [**Observability Configuration:** one_oe_observability_cisl1.json](oci_open_lz_one-oe_observability_cisl1.auto.tfvars.json) | Events, Alarms, Logging, and Notifications | [OCI Landing Zone Observability](https://github.com/oci-landing-zones/terraform-oci-modules-observability) |
+| [**IAM Configuration**:</br> oneoe_iam.json](oci_open_lz_one-oe_iam.auto.tfvars.json) | Compartments, Identity Domain, IAM groups, policies | [OCI Landing Zone IAM](https://github.com/oci-landing-zones/terraform-oci-modules-iam) |
+| [**Network Configuration**:</br> oneoe_hub_a_network_pre.json](oci_open_lz_hub_a_network_light.auto.tfvars.json) | Hub A, two OCI Network Firewalls (DMZ and Internal NFWs), Internet GW, NAT GW, Service GW, DRG, Routing tables, two Spoke VCNs (Prod, PreProd), Security Lists, NSGs and one example Public Load Balancer (LBaaS) | [OCI Landing Zone Network](https://github.com/oci-landing-zones/terraform-oci-modules-networking) |
+| [**Security Configuration**:</br> oneoe_security_cis1.json](oci_open_lz_one-oe_security_cisl1.auto.tfvars.json) | Security Zones, Cloud Guard | [OCI Landing Zone Security](https://github.com/oci-landing-zones/terraform-oci-modules-security) |
+| [**Observability Configuration**</br> one_oe_observability_cisl1.json](oci_open_lz_one-oe_observability_cisl1.auto.tfvars.json) | Events, Alarms, Logging, and Notifications | [OCI Landing Zone Observability](https://github.com/oci-landing-zones/terraform-oci-modules-observability) |
 
 &nbsp;
 
