@@ -28,6 +28,15 @@ There are two deployment options: One-Stack Deployment with **CIS Level 1** and 
 
  ### Input Configurations for **CIS Level 1** 
 
+| JSON configuration | Configuration-defined components | Terraform module that processes configuration | 
+|:-|:-|:-|
+| **IAM configuration**</br> [oneoe_iam.json](oci_open_lz_one-oe_iam.auto.tfvars.json) | • Compartments</br> • Identity Domain</br> • IAM groups and policies | [OCI Landing Zone IAM](https://github.com/oci-landing-zones/terraform-oci-modules-iam) |
+| **Network configuration** for</br> *Step 1*: [oneoe_hub_a_network_pre.json](oci_open_lz_hub_a_network_light.auto.tfvars.json)</br> and</br> *Step 2*: [oneoe_hub_a_network.json](oneoe_hub_a_network.json) | • Hub A</br> • OCI Network Firewalls (DMZ & Internal) </br> • Internet, NAT, and Service Gateways</br> • Dynamic Routing Gateway (DRG)</br> • Routing Tables</br> • Two Spoke VCNs (Prod & PreProd)</br> • Security Lists (SLs) & Network Security Groups (NSGs)</br> • Public Load Balancer ([free tier LBaaS](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm#loadbalancing), for example purposes) | [OCI Landing Zone Network](https://github.com/oci-landing-zones/terraform-oci-modules-networking) |
+| **Security configuration** for</br> *Step 1*: [oneoe_security_cis1.json](oci_open_lz_one-oe_security_cisl1.auto.tfvars.json)</br> and</br> *Step 2*: [oneoe_security_cis1_sz345.json](oci_open_lz_one-oe_security_cisl1.auto.tfvars.json) | • Security Zones and Cloud Guard | [OCI Landing Zone Security](https://github.com/oci-landing-zones/terraform-oci-modules-security) |
+| **Observability configuration** for</br> *Step 1*: [oneoe_observability_cisl1.json](oci_open_lz_one-oe_observability_cisl1.auto.tfvars.json)</br> and</br> *Step 2*: [oneoe_observability_cisl1_fllowlogs.json](oci_open_lz_one-oe_observability_cisl1_addon_flowlogs.auto.tfvars.json) | • Events</br> • Alarms</br> • Logging</br> • Notifications | [OCI Landing Zone Observability](https://github.com/oci-landing-zones/terraform-oci-modules-observability) |
+
+
+
 | JSON configuration | Configuration-defined components | 
 |:-|:-|
 | **IAM configuration**</br> [oneoe_iam.json](oci_open_lz_one-oe_iam.auto.tfvars.json) | • Compartments</br> • Identity Domain</br> • IAM groups and policies |
@@ -37,7 +46,7 @@ There are two deployment options: One-Stack Deployment with **CIS Level 1** and 
 
 &nbsp;
 
-### Deploy with OCI Resource Manager (ORM) - **CIS Level 1**
+### Deploy with OCI Resource Manager (ORM) - CIS Level 1
 
 #### Step 1: 
   - Click [<img src="/commons/images/DeployToOCI.svg"  height="25" align="center">](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/oci-landing-zones/terraform-oci-modules-orchestrator/archive/refs/tags/v2.0.5.zip&zipUrlVariables={"input_config_files_urls":"https://raw.githubusercontent.com/oci-landing-zones/oci-landing-zone-operating-entities/master/blueprints/one-oe/runtime/one-stack/oci_open_lz_one-oe_iam.auto.tfvars.json,https://raw.githubusercontent.com/oci-landing-zones/oci-landing-zone-operating-entities/master/blueprints/one-oe/runtime/one-stack/oci_open_lz_hub_a_network_light.auto.tfvars.json,https://raw.githubusercontent.com/oci-landing-zones/oci-landing-zone-operating-entities/master/blueprints/one-oe/runtime/one-stack/oci_open_lz_one-oe_observability_cisl1.auto.tfvars.json,https://raw.githubusercontent.com/oci-landing-zones/oci-landing-zone-operating-entities/master/blueprints/one-oe/runtime/one-stack/oci_open_lz_one-oe_security_cisl1.auto.tfvars.json,https://raw.githubusercontent.com/oci-landing-zones/oci-landing-zone-operating-entities/master/blueprints/one-oe/runtime/one-stack/oci_open_lz_one-oe_governance.auto.tfvars.json"})</br>
@@ -67,7 +76,7 @@ And follow these steps:
 
 &nbsp; 
 
-Once all required updates are applied, rerun the ORM stack.
+Once all required updates are applied, redeploy the ORM stack.
 
 &nbsp;
 
@@ -77,16 +86,16 @@ Once all required updates are applied, rerun the ORM stack.
 
  ### Input Configurations for **CIS Level 2** 
 
-| JSON configuration | Configuration-defined components |
-|:-|:-|
-| **IAM configuration**</br> [oneoe_iam.json](oci_open_lz_one-oe_iam.auto.tfvars.json) | • Compartments</br> • Identity Domain</br> • IAM groups and policies |
-| **Network configuration** for</br> *Step 1*: [oneoe_hub_a_network_pre.json](oci_open_lz_hub_a_network_light.auto.tfvars.json)</br> and</br> *Step 2*: [oneoe_hub_a_network.json](oneoe_hub_a_network.json) | • Hub A</br> • OCI Network Firewalls (DMZ & Internal) </br> • Internet, NAT, and Service Gateways</br> • Dynamic Routing Gateway (DRG)</br> • Routing Tables</br> • Two Spoke VCNs (Prod & PreProd)</br> • Security Lists (SLs) & Network Security Groups (NSGs)</br> • Public Load Balancer ([free tier LBaaS](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm#loadbalancing), for example purposes) |
-| **Security configuration** for</br> *Step 1*: [oneoe_security_cis2.json](oci_open_lz_one-oe_security_cisl1.auto.tfvars.json)</br> and</br> *Step 2*: [oneoe_security_cis2_sz345.json](oci_open_lz_one-oe_security_cisl2.auto.tfvars.json) | • Security Zones and Cloud Guard</br> • Vault and Software Key |
-| **Observability configuration** for</br> *Step 1*: [oneoe_observability_cisl2.json](oci_open_lz_one-oe_observability_cisl2.auto.tfvars.json)</br> and</br> *Step 2*: [oneoe_observability_cisl2_fllowlogs.json](oci_open_lz_one-oe_observability_cisl2_addon_flowlogs.auto.tfvars.json) | • Events</br> • Alarms</br> • Logging</br> • Notifications |
+| JSON configuration | Configuration-defined components | Terraform module that processes configuration | 
+|:-|:-|:-|
+| **IAM configuration**</br> [oneoe_iam.json](oci_open_lz_one-oe_iam.auto.tfvars.json) | • Compartments</br> • Identity Domain</br> • IAM groups and policies | [OCI Landing Zone IAM](https://github.com/oci-landing-zones/terraform-oci-modules-iam) |
+| **Network configuration** for</br> *Step 1*: [oneoe_hub_a_network_pre.json](oci_open_lz_hub_a_network_light.auto.tfvars.json)</br> and</br> *Step 2*: [oneoe_hub_a_network.json](oneoe_hub_a_network.json) | • Hub A</br> • OCI Network Firewalls (DMZ & Internal) </br> • Internet, NAT, and Service Gateways</br> • Dynamic Routing Gateway (DRG)</br> • Routing Tables</br> • Two Spoke VCNs (Prod & PreProd)</br> • Security Lists (SLs) & Network Security Groups (NSGs)</br> • Public Load Balancer ([free tier LBaaS](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm#loadbalancing), for example purposes) | [OCI Landing Zone Network](https://github.com/oci-landing-zones/terraform-oci-modules-networking) |
+| **Security configuration** for</br> *Step 1*: [oneoe_security_cis2.json](oci_open_lz_one-oe_security_cisl1.auto.tfvars.json)</br> and</br> *Step 2*: [oneoe_security_cis2_sz345.json](oci_open_lz_one-oe_security_cisl2.auto.tfvars.json) | • Security Zones and Cloud Guard | [OCI Landing Zone Security](https://github.com/oci-landing-zones/terraform-oci-modules-security) |
+| **Observability configuration** for</br> *Step 1*: [oneoe_observability_cisl2.json](oci_open_lz_one-oe_observability_cisl2.auto.tfvars.json)</br> and</br> *Step 2*: [oneoe_observability_cisl2_fllowlogs.json](oci_open_lz_one-oe_observability_cisl2_addon_flowlogs.auto.tfvars.json) | • Events</br> • Alarms</br> • Logging</br> • Notifications | [OCI Landing Zone Observability](https://github.com/oci-landing-zones/terraform-oci-modules-observability) |
 
 &nbsp;
 
-### Deploy with OCI Resource Manager (ORM) - **CIS Level 2**
+### Deploy with OCI Resource Manager (ORM) - CIS Level 2
 
 #### Step 1: 
   - Click [<img src="/commons/images/DeployToOCI.svg"  height="25" align="center">](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/oci-landing-zones/terraform-oci-modules-orchestrator/archive/refs/tags/v2.0.5.zip&zipUrlVariables={"input_config_files_urls":"https://raw.githubusercontent.com/oci-landing-zones/oci-landing-zone-operating-entities/master/blueprints/one-oe/runtime/one-stack/oci_open_lz_one-oe_iam.auto.tfvars.json,https://raw.githubusercontent.com/oci-landing-zones/oci-landing-zone-operating-entities/master/blueprints/one-oe/runtime/one-stack/oci_open_lz_hub_a_network_light.auto.tfvars.json,https://raw.githubusercontent.com/oci-landing-zones/oci-landing-zone-operating-entities/master/blueprints/one-oe/runtime/one-stack/oci_open_lz_one-oe_observability_cisl1.auto.tfvars.json,https://raw.githubusercontent.com/oci-landing-zones/oci-landing-zone-operating-entities/master/blueprints/one-oe/runtime/one-stack/oci_open_lz_one-oe_security_cisl1.auto.tfvars.json,https://raw.githubusercontent.com/oci-landing-zones/oci-landing-zone-operating-entities/master/blueprints/one-oe/runtime/one-stack/oci_open_lz_one-oe_governance.auto.tfvars.json"})</br>
