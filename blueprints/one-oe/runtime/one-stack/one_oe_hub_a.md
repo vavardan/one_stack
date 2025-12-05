@@ -65,6 +65,12 @@ And follow these steps:
     Use the configuration [oneoe_observability_cisl1_flowlogs.json](oci_open_lz_one-oe_observability_cisl2_addon_flowlogs.auto.tfvars.json) to create the VCN and Subnets flow logs.</br>
     Note that by default, the VCN and Subnet flows logs are not deployed. The first 10 gigabytes of log storage are free every month. The configuration creates a log group for the shared network and each shared network environment, where it would create logs for every VCN and subnet within the VCNs. It would depend on how much traffic is generated in your VCNs/Subnets to overpass the free log storage that you get every month.
 
+&nbsp; 
+
+Once all required updates are applied, redeploy the ORM stack.
+
+&nbsp;
+
 ---
 
 &nbsp; 
