@@ -90,8 +90,17 @@ Once all required updates are applied, rerun the ORM stack.
 
 #### Step 1: 
   - Click [<img src="/commons/images/DeployToOCI.svg"  height="25" align="center">](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/oci-landing-zones/terraform-oci-modules-orchestrator/archive/refs/tags/v2.0.5.zip&zipUrlVariables={"input_config_files_urls":"https://raw.githubusercontent.com/oci-landing-zones/oci-landing-zone-operating-entities/master/blueprints/one-oe/runtime/one-stack/oci_open_lz_one-oe_iam.auto.tfvars.json,https://raw.githubusercontent.com/oci-landing-zones/oci-landing-zone-operating-entities/master/blueprints/one-oe/runtime/one-stack/oci_open_lz_hub_a_network_light.auto.tfvars.json,https://raw.githubusercontent.com/oci-landing-zones/oci-landing-zone-operating-entities/master/blueprints/one-oe/runtime/one-stack/oci_open_lz_one-oe_observability_cisl1.auto.tfvars.json,https://raw.githubusercontent.com/oci-landing-zones/oci-landing-zone-operating-entities/master/blueprints/one-oe/runtime/one-stack/oci_open_lz_one-oe_security_cisl1.auto.tfvars.json,https://raw.githubusercontent.com/oci-landing-zones/oci-landing-zone-operating-entities/master/blueprints/one-oe/runtime/one-stack/oci_open_lz_one-oe_governance.auto.tfvars.json"})</br>
-  
-And follow the the same steps as described for **CIS Level 1** deployment.
+
+And follow these steps:
+  1. Accept terms, wait for the configuration to load.
+  2. Set the working directory to “rms-facade”.
+  3. Set the stack name you prefer.
+  4. Set the terraform version to 1.5.x. Click Next.
+  5. Accept the default files. Click Next. Optionally, replace with your json/yaml config files.
+  6. Un-check run apply. Click Create.
+
+#### Step 2: 
+Follow the the same steps as described in **CIS Level 1 - Step 2**.
 
 ---
 
