@@ -62,7 +62,7 @@ And follow these steps:
     Use the configuration [oneoe_security_cis1_sz345.json](oci_open_lz_one-oe_security_cisl1_addon_sz345.auto.tfvars.json) to extend the base configuration with additional Security Zone targets to apply Recipes in the shared network compartment, the production shared network compartment, and project 1 example. As the compartment hierarchy goes deeper the Security Zones are more restrictive.</br>
     !!! Note that this update action is not in the base stack red due to limitations with terraform dependency grapth while creating these resources. These will be merged once these limitations are solved.
   3. **Observability - Flow Logs**:</br>
-     - Use the configuration [oneoe_observability_cisl1_flowlogs.json](oci_open_lz_one-oe_observability_cisl2_addon_flowlogs.auto.tfvars.json) to enable flow logs for your VCNs and Subnets. Note that by default, VCN and Subnet flow logs are not deployed. The first 10 GB of log storage per month are free. This configuration creates a log group for the shared network and for each network environment. Actual log storage usage will depend on the amount of traffic in your VCNs and subnets, which may exceed the free monthly quota.
+     - Use the configuration [oneoe_observability_cisl1_flowlogs.json](oci_open_lz_one-oe_observability_cisl2_addon_flowlogs.auto.tfvars.json) to enable flow logs for your VCNs and Subnets.</br> Note that by default, VCN and Subnet flow logs are not deployed. The first 10 GB of log storage per month are free. This configuration creates a log group for the shared network and for each network environment. Actual log storage usage will depend on the amount of traffic in your VCNs and subnets, which may exceed the free monthly quota.
 
 &nbsp; 
 
