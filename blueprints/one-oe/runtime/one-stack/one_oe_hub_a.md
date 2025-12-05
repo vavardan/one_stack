@@ -37,7 +37,7 @@ There are two deployment options: One-Stack Deployment with **CIS Level 1** and 
 
 &nbsp;
 
-### Deploy One-OE CIS Level 1 with OCI Resource Manager (ORM)
+### Deploy with OCI Resource Manager (ORM) - CIS Level 1
 
 #### Step 1: 
   - Click [<img src="/commons/images/DeployToOCI.svg"  height="25" align="center">](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/oci-landing-zones/terraform-oci-modules-orchestrator/archive/refs/tags/v2.0.5.zip&zipUrlVariables={"input_config_files_urls":"https://raw.githubusercontent.com/oci-landing-zones/oci-landing-zone-operating-entities/master/blueprints/one-oe/runtime/one-stack/oci_open_lz_one-oe_iam.auto.tfvars.json,https://raw.githubusercontent.com/oci-landing-zones/oci-landing-zone-operating-entities/master/blueprints/one-oe/runtime/one-stack/oci_open_lz_hub_a_network_light.auto.tfvars.json,https://raw.githubusercontent.com/oci-landing-zones/oci-landing-zone-operating-entities/master/blueprints/one-oe/runtime/one-stack/oci_open_lz_one-oe_observability_cisl1.auto.tfvars.json,https://raw.githubusercontent.com/oci-landing-zones/oci-landing-zone-operating-entities/master/blueprints/one-oe/runtime/one-stack/oci_open_lz_one-oe_security_cisl1.auto.tfvars.json,https://raw.githubusercontent.com/oci-landing-zones/oci-landing-zone-operating-entities/master/blueprints/one-oe/runtime/one-stack/oci_open_lz_one-oe_governance.auto.tfvars.json"})</br>
@@ -51,7 +51,7 @@ And follow these steps:
   6. Un-check run apply. Click Create.
   
 #### Step 2: 
-  - Below steps or some of them to be executed once Step 1 Stack and all landing zone elements are created. This step requires the update the previous ORM stack json configuration files in order to complete the Networking routing, add extra Security Zones Recipes (3, 4, and 5), and Network Flow Logs. This update can be executed in one step by replacing both files as described below.</br>
+  - The following steps, or only those relevant to your deployment—should be performed after the **Step 1** stack and all Landing Zone components have been deployed. This phase involves updating the **Step 1** ORM stack to complete Network routing, add additional Security Zone Recipes, and enable Network Flow Logs. All required updates can be applied in a single operation by replacing the corresponding configuration files as described below.
   
 
   1. **Network routing**:</br>
@@ -80,7 +80,7 @@ And follow these steps:
 
 &nbsp;
 
-### Deploy One-OE CIS Level 2 with OCI Resource Manager (ORM)
+### Deploy with OCI Resource Manager (ORM) - CIS Level 2
 
 #### Step 1: 
   - Click [<img src="/commons/images/DeployToOCI.svg"  height="25" align="center">](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/oci-landing-zones/terraform-oci-modules-orchestrator/archive/refs/tags/v2.0.5.zip&zipUrlVariables={"input_config_files_urls":"https://raw.githubusercontent.com/oci-landing-zones/oci-landing-zone-operating-entities/master/blueprints/one-oe/runtime/one-stack/oci_open_lz_one-oe_iam.auto.tfvars.json,https://raw.githubusercontent.com/oci-landing-zones/oci-landing-zone-operating-entities/master/blueprints/one-oe/runtime/one-stack/oci_open_lz_hub_a_network_light.auto.tfvars.json,https://raw.githubusercontent.com/oci-landing-zones/oci-landing-zone-operating-entities/master/blueprints/one-oe/runtime/one-stack/oci_open_lz_one-oe_observability_cisl1.auto.tfvars.json,https://raw.githubusercontent.com/oci-landing-zones/oci-landing-zone-operating-entities/master/blueprints/one-oe/runtime/one-stack/oci_open_lz_one-oe_security_cisl1.auto.tfvars.json,https://raw.githubusercontent.com/oci-landing-zones/oci-landing-zone-operating-entities/master/blueprints/one-oe/runtime/one-stack/oci_open_lz_one-oe_governance.auto.tfvars.json"})</br>
