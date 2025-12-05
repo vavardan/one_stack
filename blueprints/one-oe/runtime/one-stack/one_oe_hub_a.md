@@ -38,7 +38,7 @@ There are two deployment options: One-Stack Deployment with **CIS Level 1** and 
 
 
 | JSON configuration | Configuration-defined components | 
-|:-|:-|:-|
+|:-|:-|
 | **IAM configuration**</br> [oneoe_iam.json](oci_open_lz_one-oe_iam.auto.tfvars.json) | • Compartments</br> • Identity Domain</br> • IAM groups and policies |
 | **Network configuration** for</br> *Step 1*: [oneoe_hub_a_network_pre.json](oci_open_lz_hub_a_network_light.auto.tfvars.json)</br> and</br> *Step 2*: [oneoe_hub_a_network.json](oneoe_hub_a_network.json) | • Hub A</br> • OCI Network Firewalls (DMZ & Internal) </br> • Internet, NAT, and Service Gateways</br> • Dynamic Routing Gateway (DRG)</br> • Routing Tables</br> • Two Spoke VCNs (Prod & PreProd)</br> • Security Lists (SLs) & Network Security Groups (NSGs)</br> • Public Load Balancer ([free tier LBaaS](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm#loadbalancing), for example purposes) |
 | **Security configuration** for</br> *Step 1*: [oneoe_security_cis1.json](oci_open_lz_one-oe_security_cisl1.auto.tfvars.json)</br> and</br> *Step 2*: [oneoe_security_cis1_sz345.json](oci_open_lz_one-oe_security_cisl1.auto.tfvars.json) | • Security Zones and Cloud Guard |
