@@ -51,7 +51,7 @@ And follow these steps:
   6. Un-check run apply. Click Create.
   
 #### Step 2: 
-  - The following steps, or only those relevant to your deployment—should be performed after the **Step 1** stack and all Landing Zone components have been deployed. This phase involves updating the **Step 1** ORM stack to complete Network routing, add additional Security Zone Recipes, and enable Network Flow Logs. All required updates can be applied in a single operation by replacing the corresponding configuration files as described below.
+  - The following steps, or only those relevant to your deployment - should be performed after the **Step 1** stack and all Landing Zone components have been deployed. This phase involves updating the **Step 1** ORM stack to complete Network routing, add additional Security Zone Recipes, and enable Network Flow Logs. All required updates can be applied in a single operation by replacing the corresponding configuration files as described below.
   
 
   1. **Network routing**:</br>
